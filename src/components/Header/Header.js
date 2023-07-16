@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
-import { FaBars } from 'react-icons/fa';
+import React from 'react';
 import './Header.css';
 import useIsMobile from '../../hooks/useIsMobile';
-import Navbar from '../Navbar/Navbar';
 
 const Header = () => {
      const isMobile = useIsMobile()

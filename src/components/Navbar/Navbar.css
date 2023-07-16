@@ -1,0 +1,86 @@
+.navbar {
+  display: flex;
+  height: 100vh;
+  width: 20vh;
+  justify-content: center;
+  color: black;
+  background-color: white;
+}
+
+.dotted-line {
+  border-top: 1px dotted #999;
+  margin: 10px 0;
+  width: 100%;
+}
+.navbar-icon {
+  cursor: pointer;
+}
+.mobile-screen-header {
+  display: flex;
+  gap: 15px;
+  font-size: large;
+  flex-direction: column;
+  color: #0025ad;
+}
+
+.drawer {
+  display: flex;
+}
+.tag {
+  border: 1px solid red;
+  width: 8vh;
+  height: max-content;
+  margin: auto;
+  padding: 2px;
+  border-radius: 20px;
+  font-size: small;
+  color: red;
+  background-color: #ffe2e9;
+}
+.navbar ul {
+  padding: 10px;
+}
+.navbar ul li {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  justify-content: center;
+  text-align: center;
+  justify-items: center;
+  padding: 10px;
+  font-size: medium;
+}
+
+@media (max-width: 767px) {
+  .navbar ul li {
+    flex-direction: row;
+    gap: 10px;
+    margin-left: 30px;
+    font-size: medium;
+  }
+}
+
+.sidenav {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  color: #fff;
+  transition: left 0.3s ease-in-out;
+}
+
+.sidenav ul {
+  list-style-type: none;
+  padding: 10;
+  margin: 0;
+}
+
+.sidenav ul li {
+  padding: 10px;
+  border-bottom: 1px solid #555;
+}
+
+.sidenav.open {
+  left: 0;
+}

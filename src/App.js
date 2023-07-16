@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Assessment from './components/Assessments/Assessments';
+import Header from './components/Header/Header';
+import Navbar from './components/Navbar/Navbar';
+import Overview from './components/Overview/Overview';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{display:"flex",background:"#E4E4E4",gap:"10px"}}>
+      <div>
+<Navbar fromHeader={false}/>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column"}}>
+      <Header/>
+        <Overview />
+        <Assessment/>
+      </div>
+    
     </div>
   );
 }

@@ -1,0 +1,13 @@
+.overview-vertical-line {
+  width: 1px;
+  height: 70px; /* Adjust the height as needed */
+  background-color: #dbdbdb;
+  margin: 0 10px;
+}
+
+.middle-line {
+  width: 1px;
+  height: 30px; /* Adjust the height as needed */
+  background-color: #dbdbdb;
+  margin: 0 10px;
+}

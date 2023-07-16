@@ -2,14 +2,19 @@ header {
   background-color: white;
   color: #fff;
   padding: 10px;
-  width: 187vh;
+  width: 190vh;
   border-bottom: 1px solid #b7b7b7;
+}
+@media (max-width: 768px) {
+  header {
+    width: 50vh;
+  }
 }
 
 .tabs {
   display: flex;
 }
-.vertical-line {
+.header-line {
   width: 1px;
   height: 40px; /* Adjust the height as needed */
   background-color: #dbdbdb;

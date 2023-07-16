@@ -7,16 +7,21 @@ const Header = () => {
 
   return (
        <header>
-      { isMobile ?   <div>
-      
-      
-          <div> <h3 style={{ color: "black" }}>Assessments</h3></div> </div>:null}
+    
       <div className="tabs">
     
-          <div className='tab'>Assessment</div>     
-          <div className="vertical-line"></div>
+           { !isMobile ?   <>
+      
+      
+          <div className='tab'> Assessment</div> </>:null}
+          <div className="header-line"></div>
         <div className="tab active">My Assessments</div>
      
+        {
+          isMobile ? <div className='tab'>
+            Unstop Assessments
+            </div>:null
+        }
        
             </div>
           

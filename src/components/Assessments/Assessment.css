@@ -1,0 +1,13 @@
+.parent-div {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .parent-div {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+

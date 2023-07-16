@@ -1,13 +1,126 @@
-.overview-vertical-line {
-  width: 1px;
-  height: 70px; /* Adjust the height as needed */
-  background-color: #dbdbdb;
-  margin: 0 10px;
+/* Overview.css */
+
+/* Container styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: white;
+  padding: 15px;
+}
+@media (max-width: 767px) {
+  .container {
+    width: max-content;
+  }
+}
+.font-weight-700 {
+  font-weight: 700;
+}
+.green {
+  color: #00c22c;
+  font-size: small;
+}
+.sub {
+  font-size: 10px;
+  font-weight: 600;
+  color: #6a6a6a;
+}
+/* Title styles */
+.title {
+  font-size: medium;
+  font-weight: 500;
+  color: #00219a;
 }
 
+/* Border styles */
+.border {
+  border: 1px solid #e2e2e2;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+}
+@media (max-width: 767px) {
+  .border {
+    flex-direction: column;
+  }
+}
+
+/* Icon styles */
+.icon {
+  font-size: 20px;
+}
+
+/* Vertical line styles */
+.vertical-line {
+  border-left: 1px solid #e2e2e2;
+  height: 70px !important;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+@media (max-width: 767px) {
+  .vertical-line {
+    display: none;
+  }
+}
+
+/* Middle line styles */
 .middle-line {
-  width: 1px;
-  height: 30px; /* Adjust the height as needed */
-  background-color: #dbdbdb;
-  margin: 0 10px;
+  border: 1px solid #d7d7d7;
+  height: 30px;
+  margin: 0 5px;
+}
+
+/* Total Assessment styles */
+.total-assessment {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Candidates styles */
+.candidates {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/* Overview.css */
+
+/* ... Existing styles ... */
+
+/* Candidates sub-styles */
+.candidates-sub {
+  display: flex;
+  gap: 10px;
+}
+
+/* Candidates sub-sub-styles */
+.candidates-sub-sub {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Candidates source styles */
+.candidates-source {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Candidates source sub-styles */
+.candidates-source-sub {
+  display: flex;
+  gap: 10px;
+}
+
+/* Candidates source sub-sub-styles */
+.candidates-source-sub-sub {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Total Purpose styles */
+.total-purpose {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

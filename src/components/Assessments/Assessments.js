@@ -2,24 +2,34 @@ import React, { useState } from "react"
 
 import { FcPlus,FcLeave,FcLink,FcCalendar } from "react-icons/fc";
 import Modal from "react-modal";
-
+import { AiOutlineSearch, AiTwotoneFunnelPlot } from "react-icons/ai";
+import { ImStatsBars } from "react-icons/im";
+import useIsMobile from "../../hooks/useIsMobile";
+import Overview from "../Overview/Overview";
+import "./Assessment.css"
 const Assessment = () => {
+  const isMobile=useIsMobile()
+
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [toggleOverview,setToggleOverview]=useState(false)
 
   const openModal = () => {
     setModalIsOpen(true);
   };
 
   return (
-    <div style={{ background: "white", padding: "15px",height:"20vw" }}>
-      <div style={{ fontWeight: 500, color: "#494ba8" }}>My Assessments</div>
-      <div style={{ display: "flex",marginTop: "10px",justifyContent:"space-between" }}>
+    <div style={{ background: "white", padding: "15px", height: "20vw" }}>
+      {
+        toggleOverview ? <Overview/>:null
+      }
+      <div className="assessment-container" style={{ fontWeight: 500, color: "#494ba8", display: "flex", justifyContent: "space-between",width:"100%" }}>My Assessments  {isMobile ? <div><AiOutlineSearch /><AiTwotoneFunnelPlot /> <ImStatsBars style={{cursor:"pointer"}} onClick={()=>setToggleOverview(!toggleOverview)}  /></div> : null}</div>
+      <div className="parent-div">
         <div
           style={{
             background: "#F0F0F0",
             borderRadius: "7px",
             border: "1px dotted #CFCFCF",
-            width: "22vw",
+            width: "40vh",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -44,7 +54,7 @@ const Assessment = () => {
         
             borderRadius: "7px",
             border: "1px solid #CFCFCF",
-                           width: "22vw",
+                        width: "48vh",
             padding:"10px"
          
           }}
@@ -103,7 +113,7 @@ const Assessment = () => {
         
             borderRadius: "7px",
             border: "1px solid #CFCFCF",
-                           width: "22vw",
+                       width: "48vh",
             padding:"10px"
          
           }}

@@ -1,99 +1,89 @@
-import React from "react"
-import { FcAcceptDatabase, } from "react-icons/fc";
+import React from "react";
+import { FcAcceptDatabase } from "react-icons/fc";
 import { FiUsers } from "react-icons/fi";
-import "./Overview.css"
-
+import { FaGlobe } from "react-icons/fa6";
+import "./Overview.css";
+import useIsMobile from '../../hooks/useIsMobile';
 
 const Overview = () => {
-     return (
-          <div style={{ display: "flex", flexDirection: "column", gap: "10px" ,background:"white",padding:"15px"}}>
-               <div style={{fontSize:"medium",fontWeight:500,color:"#00219A"}}>Assessments Overview</div>
-               <div style={{border:"1px solid #E2E2E2",borderRadius:"10px",padding:"10px",display:"flex"}}>
-                    <div style={{display:"flex",flexDirection:"column",gap:"10px"}}>
-                         <div style={{fontSize:"medium",fontWeight:500,color:"#00219A"}}>
-                              Total Assessment
-                         </div>
-                         <div style={{ display: "flex", gap: "10px" }}>
-                              <FcAcceptDatabase  style={{fontSize:"20px"}}/>
-                                <div style={{fontWeight:700}}>
-                              34
-                              </div>
-                                
-                         </div>
-                    
-                    </div>
-                       <div className="overview-vertical-line"></div>
-                        <div style={{display:"flex",flexDirection:"column",gap:"10px"}}>
-                         <div style={{fontSize:"medium",fontWeight:500,color:"#00219A"}}>
-                            Candidates
-                         </div>
-                         <div style={{ display: "flex", gap: "10px" }}>
-                              <div style={{ display: "flex", gap: "10px" }}>
- <FiUsers  style={{fontSize:"20px"}}/>
-                                <div style={{display:"flex",flexDirection:"column"}}>
-                                        <div style={{ fontWeight: 700, display:"flex",gap:"3px"}}>  11,145 <div style={{color:"green"}}>+89</div></div> 
-                                        <div>Total Candidate  </div>
-                                   </div>
-                                       <div className="middle-line"></div>
+  const isMobile = useIsMobile()
+
+  return (
+    <div className="container">
+      <div className="title">Assessments Overview</div>
+      <div className="border">
+                 <div className="total-assessment" style={{ display: isMobile ? "flex" : "", flexDirection: isMobile ? "row" :"column"}}>
+                     
+                      <div>
                            
-                              <div style={{display:"flex",flexDirection:"column"}}>
-                                             <div style={{ fontWeight: 700, display:"flex",gap:"3px"}}>  1,14<div style={{color:"green"}}>+89</div></div>
-                                         <div>Who Attempted</div>
-                                   </div>
+                   
+          <div className="title">Total Assessment</div>
+          <div className="candidates-sub">
+            <FcAcceptDatabase className="icon" />
+            <div className="font-weight-700">34</div>
+                           </div>
                               </div>
-                             
-                                
-                         </div>
-                    
-                    </div>
-                    <div className="overview-vertical-line"></div>
-                     <div style={{display:"flex",flexDirection:"column",gap:"10px"}}>
-                         <div style={{fontSize:"medium",fontWeight:500,color:"#00219A"}}>
-                            Candidates Source
-                         </div>
-                         <div style={{ display: "flex", gap: "10px" }}>
-                              <div style={{ display: "flex", gap: "10px" }}>
- <FiUsers  style={{fontSize:"20px"}}/>
-                                <div style={{display:"flex",flexDirection:"column"}}>
-                                        <div style={{ fontWeight: 700, display:"flex",gap:"3px"}}>  11,000 <div style={{color:"green"}}>+89</div></div> 
-                                        <div> </div>
-                                   </div>
-                                       <div className="middle-line"></div>
-                           
-                              <div style={{display:"flex",flexDirection:"column"}}>
-                                             <div style={{ fontWeight: 700, display:"flex",gap:"3px"}}>  145<div style={{color:"green"}}>+89</div></div>
-                                         <div>Social Share</div>
-                                   </div>
-                                     
-                              <div style={{display:"flex",flexDirection:"column"}}>
-                                             <div style={{ fontWeight: 700, display:"flex",gap:"3px"}}>  1,45<div style={{color:"green"}}>+89</div></div>
-                                         <div>Unique Link</div>
-                                   </div>
-                              </div>
-                             
-                                
-                         </div>
-                         
-                    
-                    </div>
-                       <div className="overview-vertical-line"></div>
-                         <div style={{display:"flex",flexDirection:"column",gap:"10px"}}>
-                         <div style={{fontSize:"medium",fontWeight:500,color:"#00219A"}}>
-                              Total Purpose
-                         </div>
-                         <div style={{ display: "flex", gap: "10px" }}>
-                              <FcAcceptDatabase  style={{fontSize:"20px"}}/>
-                                <div style={{fontWeight:700}}>
-                              11
-                              </div>
-                                
-                         </div>
-                    
-                    </div>
-               </div>
-               
-               
+                      {
+                           isMobile ?  <div> <div className="vertical-line"></div>
+        <div className="total-purpose">
+          <div className="title">Total Purpose</div>
+          <div className="candidates-sub">
+            <FcAcceptDatabase className="icon" />
+            <div className="font-weight-700">11</div>
           </div>
-     )
-}
-export default Overview
+        </div></div>:null
+                      }
+        </div>
+        <div className="vertical-line"></div>
+        <div className="candidates">
+          <div className="title">Candidates</div>
+          <div className="candidates-sub">
+            <div className="candidates-sub-sub">
+         <div className="font-weight-700">    <FiUsers/>     11,145 <span className="green">+89</span></div>
+              <div className="sub">  Total Candidate</div>
+            </div>
+            <div className="middle-line"></div>
+            <div className="candidates-sub-sub">
+              <div className="font-weight-700">1,14<span className="green">+89</span></div>
+              <div className="sub">Who Attempted</div>
+            </div>
+          </div>
+        </div>
+        <div className="vertical-line"></div>
+        <div className="candidates-source">
+          <div className="title">Candidates Source</div>
+          <div className="candidates-source-sub">
+            <div className="candidates-source-sub-sub">
+              <div className="font-weight-700"><FaGlobe/>11,000 <span className="green">+89</span></div>
+             <div className="sub">E-mail</div>
+            </div>
+            <div className="middle-line"></div>
+            <div className="candidates-source-sub-sub">
+              <div className="font-weight-700">145 <span className="green">+89</span></div>
+              <div className="sub">Social Share</div>
+              
+                           </div>
+                               <div className="middle-line"></div>
+            <div className="candidates-source-sub-sub">
+              <div className="font-weight-700">1,45 <span className="green">+89</span></div>
+              <div className="sub">Unique Link</div>
+            </div>
+          </div>
+                 </div>
+                 {
+                      !isMobile ?  <>  <div className="vertical-line"></div>
+        <div className="total-purpose">
+          <div className="title">Total Purpose</div>
+          <div className="candidates-sub">
+            <FcAcceptDatabase className="icon" />
+            <div className="font-weight-700">11</div>
+          </div>
+        </div></>:null
+                 }
+     
+      </div>
+    </div>
+  );
+};
+
+export default Overview;
